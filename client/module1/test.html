@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jquery展开、收缩</title>
+    <script type="text/javascript" src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js"></script>
+</head>
+<script type="text/javascript">
+    // 收缩展开效果
+    $(document).ready(function(){
+        $(".box h2").toggle(function(){
+            $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
+        },function(){
+            $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'});
+        });
+    });
+</script>
+<body>
+<div class="box">
+    <h2>对ASP感兴趣的程序</h2>
+    <div class="text">论坛类和文章类</div>
+</div>
+</div>
+<div class="box">
+    <h2>对PHP擅长的程序</h2>
+    <div class="text">博客类和新闻类</div>
+</div>
+</div>
+<div class="box">
+    <h2>对前端开发擅长的插件</h2>
+    <div class="text">jquery</div>
+</div>
+</div>
+</body>
+</html>

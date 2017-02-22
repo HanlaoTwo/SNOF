@@ -1,0 +1,11 @@
+.leftMeun {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    width: 200px;
+    min-width:162px;
+    height: 100%;
+    background: #ddd bottom;
+    z-index: 999;
+}

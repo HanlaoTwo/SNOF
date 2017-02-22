@@ -1,0 +1,42 @@
+﻿<div class="container" style="margin-top: 80px;padding: 5%">
+    <div>
+        <div class="leftMeun" style="width: 25%">
+            <nav>
+                <ul style="margin-top: 90px;margin-bottom: 20px;">
+                    <li>
+                        <a href="" ng-click="vm.showul()">文件夹名称</a>
+                        <ul class="nav" ng-show="vm.show">
+                            <li><a href="">文件1</a></li>
+                            <li><a href="">第二个文件</a></li>
+                            <li><a href="">文件三</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul data-ng-repeat="x in vm.tree.dirs">
+                    <li>{{x.name}}
+                        <ul data-ng-repeat="y in x.dirs">
+                            <li>{{y.name}}</li>
+                        </ul>
+                        <ul data-ng-repeat="y in x.files">
+                            <li><a href="{{x.name}}/{{y}}"> {{y}} </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul data-ng-repeat="x in vm.tree.files">
+                    <li><a href="/{{x}}">{{x}}</a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="col-sm-6">
+            当你想要知道在一个字符串中的一个<br><br><br><br>匹配是否被找到，你可以使用<br>test或search方法；想得到更多的信息<br><br><br><br>（但是比较慢）则可以使用exec或match方法。如果你使用exec或match方法并且匹<br>配成功了，那么这些方法将返回一个数组并且更新相关的正则表达式对象<br>的属性和预定义的正则表达式对象（详见下）。
+            如果匹配失<br>败，那么exec方法返回null（也就是false）。在接下来的例子中，<br<br><br><br>>脚本将使用exec方法在一个字符串中查找一个匹配。当发生/d(b+)d/g使用两个不<br>同状态的正则表达式对象，lastIndex属性会得到不同的值。如果你<br>需要访问一个正则表达式的属性，则需要创建一个<br>对象初始化生成器，你应该首先把它赋值给一个变量。
+            使用括号的子字符串匹配一<br><br><br>个正则表达式模式使用括号，将导致相应的子匹配被记住。例如，/a(b)c /可以匹配字符串“abc”，并且记得“b”。回调这些括号中匹配的子串，使用数组元素[1],……[n]。
+            使用括号匹配的子字符串的数量是无限的。返回的数组中保存<br><br><br>所有被发现的子匹配。下面的例子说明了如<br><br><br><br>何使用括号的子字符串匹配。下面的脚本使用replace()方法来转换字符串中的单词<br>。在匹配到的替换文本中，脚本使用替代的$ 1,$ 2表示第一<br>个和第二个括号的子字符串匹配。
+        </div>
+
+        <div class="col-sm-2">sads</div>
+    </div>
+</div>

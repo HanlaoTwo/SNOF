@@ -1,0 +1,39 @@
+{
+  "files": [
+    "app.config.js",
+    "app.module.js",
+    "index.html"
+  ],
+  "dirs": [
+    {
+      "files": [
+        "app.css"
+      ],
+      "dirs": [],
+      "name": "app\\content"
+    },
+    {
+      "files": [
+        "core.module.js"
+      ],
+      "dirs": [
+        "flies"
+      ],
+      "name": "app\\core"
+    },
+    {
+      "files": [],
+      "dirs": [],
+      "name": "app\\lib"
+    },
+    {
+      "files": [
+        "module1.component.js",
+        "module1.module.js"
+      ],
+      "dirs": [],
+      "name": "app\\module1"
+    }
+  ],
+  "name": "app"
+}
