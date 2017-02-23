@@ -6,7 +6,6 @@
 angular.module('myapp').config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
-        console.log("*****app.config.js*****");
 
         $routeProvider
             .when('/1', {

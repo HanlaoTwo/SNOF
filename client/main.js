@@ -62,6 +62,5 @@ require(
         "module1Ctrl",
         "module2"
     ], function (angular) {
-        console.log("----------");
         angular.bootstrap(document, ["myapp"]);
     });

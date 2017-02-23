@@ -10,10 +10,9 @@
 
     function Module1Ctrl() {
         var vm = this;
-        vm.list_open = true;
-        vm.list_close = false;
+        vm.show = true;
         vm.hello = "lallalala";
-        vm.tree = {};
+        vm.tree = { };
         vm.listfiles = function () {
             $.ajax({
                 type: "GET",
@@ -22,13 +21,11 @@
                 dataType: "json",
                 success: function(data){
                     vm.tree = data;
-                    console.log(data.dirs[0].name);
+                    console.log(vm.tree);
                 }
             });
         };
-        //vm.listfiles();
-        vm.showul = function () {
-            vm.show = !vm.show;
-        }
+        vm.listfiles();
+
     }
 })();
