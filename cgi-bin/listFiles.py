@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+# Filename: listFiles.py
 import os
 import json
 import re
+import pre_output as pre
 
 tagdir = '\client'
 homedir = os.path.dirname(os.path.abspath('listFles.py'))
@@ -55,12 +57,7 @@ def build_JSONtree(node):
         return
 
 
-def return_header():
-    print('Accept: application/json, text/javascript, */*; q=0.01')
-    print('Content-Type: application/json')
-    print('Access-Control-Allow-Credentials: true')
-    print('Access-Control-Allow-Headers: accessToken,Content-Type')
-    print('Access-Control-Allow-Origin: *' + '\n')
+pre.print_header()
 
 
 def cut_name(name):
