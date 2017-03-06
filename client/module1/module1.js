@@ -1,12 +1,12 @@
 /**
- * Created by hanqian18790 on 2017/2/14.
+ *  Created by hanqian18790 on 2017/2/14.
  */
 (function () {
     'use strict';
 
     angular
         .module('module1')
-        .controller('Module1Ctrl', Module1Ctrl)
+        .controller('Module1Ctrl', ['$sce',Module1Ctrl])
         .directive('innerContent', innerContent);
 
 
@@ -16,13 +16,14 @@
         };
     }
 
-    function Module1Ctrl() {
+    function Module1Ctrl($sce) {
         var vm = this;
-        vm.mdContent = "it is your content area";
+        vm.mdContent = "";
         vm.list_open = true;
         vm.list_close = false;
-        vm.hello = "lallalala";
         vm.tree = {};
+
+
         vm.listfiles = function () {
             $.ajax({
                 type: "GET",
@@ -35,13 +36,25 @@
                 }
             });
         };
+
         vm.listfiles();
+
         vm.showul = function () {
             vm.show = !vm.show;
-        }
+        };
+
         vm.showBlog = function (el) {
-            console.log("lalllalallalal");
-            vm.mdContent = "hahahahahahah"
-        }
+           var str = 'Run `grunt` for building and `grunt serve` for preview.' +'\n'+
+               '## Build & development';
+            vm.mdContent = $sce.trustAsHtml(vm.convertMD(str));
+        };
+
+        vm.convertMD = function (md) {
+            var converter = new showdown.Converter(),
+                html = converter.makeHtml(md);
+            return html;
+        };
+
+        vm.showBlog();
     }
 })();

@@ -6,14 +6,15 @@ require.config({
 
     //path映射那些不直接放置于baseUrl下的模块名
     paths: {
-        "angular":"lib/angular/angular.min",
-        "angularRoute":"lib/angular-route/angular-route",
+        "angular": "lib/angular/angular.min",
+        "angularRoute": "lib/angular-route/angular-route",
+        "angularSaninitze": "lib/angular-sanitize",
         //"bootstrap":"",
-        "myapp":"app.module",
-        "appConfig":"app.config",
-        "module1":"module1/module1.module",
-        "module1Ctrl":"module1/module1",
-        "module2":"module2/module2.module",
+        "myapp": "app.module",
+        "appConfig": "app.config",
+        "module1": "module1/module1.module",
+        "module1Ctrl": "module1/module1",
+        "module2": "module2/module2.module",
         //"module2Ctrl":"module2/module2",
 
     },
@@ -25,6 +26,10 @@ require.config({
         "angularRoute": {
             deps: ['angular'],
             exports: "angularRoute"
+        },
+        "angularSaninitze": {
+            deps: ['angular'],
+            exports: "angularSaninitze"
         },
 
 
@@ -41,7 +46,7 @@ require.config({
             exports: "module2"
         },
         "myapp": {
-            deps: ['angular','angularRoute',"module1","module2"],
+            deps: ['angular', 'angularRoute', "module1", "module2"],
             exports: "myapp"
         },
         "appConfig": {
@@ -55,6 +60,7 @@ require(
     [
         "angular",
         "angularRoute",
+        "angularSaninitze",
 
         "myapp",
         "appConfig",
